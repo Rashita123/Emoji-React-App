@@ -6,7 +6,7 @@ export default function App() {
   const [onchanger, setonchanger] = useState("");
 
   function changeHandler(event) {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setonchanger(event.target.value);
   }
 
