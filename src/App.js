@@ -35,7 +35,7 @@ export default function App() {
         placeholder="Type an emoji to find its meaning"
         onChange={emojiHandler}
       ></input>
-      <div>{meaning}</div>
+      <div style={{ fontSize: "2rem" }}>{meaning}</div>
       {emojis.map(function (emoji) {
         return (
           <span
