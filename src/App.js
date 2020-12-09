@@ -11,7 +11,6 @@ const emojiDictionary = {
 };
 
 const emojis = Object.keys(emojiDictionary);
-console.log(emojis);
 
 export default function App() {
   const [meaning, setMeaning] = useState("");
