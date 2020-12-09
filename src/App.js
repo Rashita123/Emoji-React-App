@@ -10,13 +10,22 @@ const emojiDictionary = {
   "": ""
 };
 
+const emojis = Object.keys(emojiDictionary);
+console.log(emojis);
+
 export default function App() {
   const [meaning, setMeaning] = useState("");
+
   function emojiHandler(event) {
     var meaning = emojiDictionary[event.target.value];
     if (meaning === undefined) {
       meaning = "Emoji not in our database!";
     }
+    setMeaning(meaning);
+  }
+
+  function clickHandler(emoji) {
+    var meaning = emojiDictionary[emoji];
     setMeaning(meaning);
   }
   return (
@@ -27,6 +36,17 @@ export default function App() {
         onChange={emojiHandler}
       ></input>
       <div>{meaning}</div>
+      {emojis.map(function (emoji) {
+        return (
+          <span
+            key={emoji}
+            onClick={() => clickHandler(emoji)}
+            style={{ padding: "1rem", fontSize: "2rem", cursor: "pointer" }}
+          >
+            {emoji}
+          </span>
+        );
+      })}
     </div>
   );
 }
